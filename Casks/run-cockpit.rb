@@ -10,14 +10,12 @@ cask "run-cockpit" do
 
   url "https://github.com/greggoire/run-cockpit/releases/download/v#{version}/RunCockpit.dmg"
   name "RunCockpit"
-  desc "Native macOS dashboard for live Claude Code sessions"
+  desc "Dashboard for watching live Claude Code sessions"
   homepage "https://github.com/greggoire/run-cockpit"
 
-  depends_on macos: ">= :sequoia" # macOS 15+
+  depends_on macos: :sequoia # macOS 15+ minimum
 
   app "RunCockpit.app"
 
-  zap trash: [
-    "~/Library/Application Support/RunCockpit",
-  ]
+  zap trash: "~/Library/Application Support/RunCockpit"
 end
