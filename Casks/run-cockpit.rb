@@ -2,8 +2,9 @@
 # `greggoire/homebrew-tap` at `Casks/run-cockpit.rb` on each release, updating
 # `version` and `sha256` from `scripts/release.sh` output.
 #
-# The app is unsigned/not notarized, so users must install with:
-#   brew install --cask --no-quarantine greggoire/tap/run-cockpit
+# The app is unsigned/not notarized. After install, users must clear quarantine:
+#   brew install --cask greggoire/tap/run-cockpit
+#   xattr -dr com.apple.quarantine /Applications/RunCockpit.app
 cask "run-cockpit" do
   version "1.0"
   sha256 "e589108b385978e2d87ad9b559940e5932c38793739fa52f716dbdf220b5b4fe"
